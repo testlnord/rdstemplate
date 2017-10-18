@@ -1,4 +1,4 @@
-create_rdstemplate <- function(path, ...){
+create_rdstemplate <- function(path, use.packrat, ...){
   # Create directory for new project
   dir.create(path, recursive=TRUE, showWarnings=TRUE)
 
@@ -23,6 +23,11 @@ create_rdstemplate <- function(path, ...){
           template.data),
         file.path(path, f))
     }
+  }
+
+  # Initialize Packrat
+  if (use.packrat){
+    packrat::init(path)
   }
 
 }

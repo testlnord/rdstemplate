@@ -2,3 +2,10 @@ Binding: create_rdstemplate
 Title: Reproducible Data Science Template
 OpenFiles: README.md
 
+
+
+Parameter: use.packrat
+Widget: CheckboxInput
+Label: Use Packrat with new project?
+Default: On
+Position: left
