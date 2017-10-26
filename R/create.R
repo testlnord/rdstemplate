@@ -3,10 +3,9 @@ create_rdstemplate <- function(path, use.packrat, ...){
   dir.create(path, recursive=TRUE, showWarnings=TRUE)
 
   # Collect all necessary data for file render
-  template.data <- list(
-    path = path,
-    r.version = paste(R.version$major, R.version$minor, sep='.')
-  )
+  template.data <- as.list(match.call())
+  template.data$r.version = paste(R.version$major, R.version$minor, sep='.')
+
 
   # Copy files from ./inst/template to new project
   template.dir <- system.file('template', package = 'rdstemplate')
