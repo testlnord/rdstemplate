@@ -1,4 +1,16 @@
-create_rdstemplate <- function(path, use_packrat, install_default_packages, project_name, ...){
+#' Creates New Project
+#'
+#' @param path path to the new project
+#' @param use_packrat TRUE/FALSE should we use packrat with the new project or not
+#' @param install_default_packages should we install default packages from inst/default_packages.txt?
+#' Works only if \code{use_packrat} is TRUE
+#' @param project_name Name of creating project. It can differ from path.
+#' @param ... Left for compatibility
+create_rdstemplate <- function(path,
+                               use_packrat,
+                               install_default_packages,
+                               project_name,
+                               ...){
   # Create directory for new project
   dir.create(path, recursive=TRUE, showWarnings=TRUE)
   print(path)
@@ -50,12 +62,12 @@ create_rdstemplate <- function(path, use_packrat, install_default_packages, proj
 
 
   # Initialize Packrat
-  if (use.packrat){
+  if (use_packrat){
     packrat::init(path, restart = FALSE)
   }
 
   # install default packages
-  if (use.packrat & install.default.packages){
+  if (use_packrat & install_default_packages){
     def.packages.file <- system.file('default_packages.txt', package = 'rdstemplate')
     for (package.name in readLines(def.packages.file)){
       print(file.path(path, package.name))

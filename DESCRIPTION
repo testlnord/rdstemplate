@@ -1,13 +1,16 @@
 Package: rdstemplate
 Type: Package
-Title: What the Package Does (Title Case)
+Title: Reproducible Data Science Project Template for RStudio
 Version: 0.1.0
 Author: Who wrote it
-Maintainer: The package maintainer <yourself@somewhere.net>
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
-License: What license is it under?
+Maintainer: Arkady Kalakutsky <kalakutsky@gmail.com>
+Description: You can create some standrat project and place all your boilerplate code here.
+    You can customise it all for your needs.
+    Read more at https://github.com/testlnord/rdstemplate.
+License: file LICENSE
 Encoding: UTF-8
 LazyData: true
 Imports: whisker,
-    packrat
+    packrat,
+    devtools
+RoxygenNote: 6.0.1
